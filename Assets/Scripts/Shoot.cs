@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    public GameObject bullethole;
     private bool shooting = true;
     Ray ray;
     RaycastHit hit;
@@ -26,7 +27,7 @@ public class Shoot : MonoBehaviour
          Debug.Log("Started Coroutine at timestamp : " + Time.time);
         if (Physics.Raycast(ray, out hit, 5))
             {
-                
+                Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal));
             }
         yield return new WaitForSeconds(0.086f);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
