@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject bullethole;
+    public int MagazineCap = 30;
     private bool shooting = true;
     Ray ray;
     RaycastHit hit;
@@ -14,9 +15,15 @@ public class Shoot : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(shooting && Input.GetMouseButton(0))
+        if(shooting && Input.GetMouseButton(0) && MagazineCap > 0)
         {
             StartCoroutine(Fire());
+            MagazineCap -= 1;
+        }
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            MagazineCap = 30;
         }
         
     }
