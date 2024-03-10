@@ -20,6 +20,10 @@ public class Bullet : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
-        Destroy(gameObject);
+        if(!collision.CompareTag("bullet") )
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
