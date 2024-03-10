@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class Shoot : MonoBehaviour
     {
         shooting = false;
          Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        if (Physics.Raycast(ray, out hit, 5))
+        if (Physics.Raycast(ray, out hit, 500))
             {
                 Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal));
             }
