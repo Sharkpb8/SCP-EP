@@ -20,6 +20,5 @@ public class Move_Gun : MonoBehaviour
 		verticalRotation = Mathf.Clamp(verticalRotation, -90.0f, 90.0f);
 
 		transform.Rotate(Vector3.up * mouseX);
-		Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 	}
 }
