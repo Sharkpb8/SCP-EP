@@ -2,14 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class Shoot : MonoBehaviour
 {
     public GameObject bullethole;
     public int MagazineCap = 30;
-    public TextMeshProUGUI mag;
     private bool shooting = true;
     Ray ray;
     RaycastHit hit;
@@ -23,13 +20,11 @@ public class Shoot : MonoBehaviour
         {
             StartCoroutine(Fire());
             MagazineCap -= 1;
-            mag.text = MagazineCap+"/30";
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
             MagazineCap = 30;
-            mag.text = MagazineCap+"/30";
         }
         
     }
