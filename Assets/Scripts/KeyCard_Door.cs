@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEngine;
+using UnityEngine.AI;
+using Unity.AI.Navigation;
 
 public class KeyCard_Door : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Player;
     public int Level;
     public TextMeshProUGUI OpenText;
+    public  NavMeshSurface agent;
     public Material[] levelMaterials;
     private int colorindex;
     private bool DoorEnabled = true;
@@ -39,20 +42,11 @@ public class KeyCard_Door : MonoBehaviour
             enable(true);
             if(Input.GetKeyDown(KeyCode.F)){
                 ToggleDoor();
+                agent.BuildNavMesh();
             }
         }else{
             enable(false);
         }
-        /* if (Input.GetKeyDown(KeyCode.F))
-        {
-            // Check if the player is close to the door
-            float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
-            if (distance < 5f) // Adjust the distance as needed
-            {
-                // Toggle the state of the door
-                ToggleDoor();
-            }
-        } */
     }
     void ToggleDoor()
     {
@@ -60,7 +54,6 @@ public class KeyCard_Door : MonoBehaviour
         doorCollider.enabled = DoorEnabled;
         frameCollider.enabled = DoorEnabled;
         
-        // Enable or disable the door based on its current state
         Door.SetActive(DoorEnabled);
     }
 
