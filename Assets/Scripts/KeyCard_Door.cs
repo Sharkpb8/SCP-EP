@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEngine;
@@ -11,6 +13,7 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Frame;
     public GameObject Player;
     public int Level;
+    public TextMeshProUGUI OpenText;
     public Material[] levelMaterials;
     private int colorindex;
     private bool DoorEnabled = true;
@@ -33,9 +36,12 @@ public class KeyCard_Door : MonoBehaviour
     {
         float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
         if(distance < 5f && checkLevel()){
+            enable(true);
             if(Input.GetKeyDown(KeyCode.F)){
                 ToggleDoor();
             }
+        }else{
+            enable(false);
         }
         /* if (Input.GetKeyDown(KeyCode.F))
         {
@@ -64,5 +70,9 @@ public class KeyCard_Door : MonoBehaviour
         }else{
             return false;
         }
+    }
+
+    private void enable(bool enable){
+        OpenText.gameObject.SetActive(enable);
     }
 }
