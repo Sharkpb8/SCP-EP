@@ -16,8 +16,11 @@ public class KeyCard_Door : MonoBehaviour
     private bool DoorEnabled = true;
     private Collider doorCollider;
     private Collider frameCollider;
+    private Stats stats;
     void Start()
     {
+        GameObject statsObject = GameObject.Find("Capsule");
+        stats = statsObject.GetComponent<Stats>();
         colorindex=Level-1;
         Renderer buttonRenderer = Button.GetComponent<Renderer>();
         buttonRenderer.material  = levelMaterials[colorindex];
@@ -28,7 +31,13 @@ public class KeyCard_Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
+        if(distance < 5f && checkLevel()){
+            if(Input.GetKeyDown(KeyCode.F)){
+                ToggleDoor();
+            }
+        }
+        /* if (Input.GetKeyDown(KeyCode.F))
         {
             // Check if the player is close to the door
             float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
@@ -37,7 +46,7 @@ public class KeyCard_Door : MonoBehaviour
                 // Toggle the state of the door
                 ToggleDoor();
             }
-        }
+        } */
     }
     void ToggleDoor()
     {
@@ -47,5 +56,13 @@ public class KeyCard_Door : MonoBehaviour
         
         // Enable or disable the door based on its current state
         Door.SetActive(DoorEnabled);
+    }
+
+    private bool checkLevel(){
+        if(stats.Player_Level>=Level){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

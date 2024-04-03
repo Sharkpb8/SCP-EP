@@ -10,10 +10,6 @@ public class Stats : MonoBehaviour
     public int Player_Level = 0;
     public TextMeshProUGUI Level;
 
-    public int Returnplevel(){
-        return Player_Level;
-    }
-
     void Update(){
         if (Input.GetKeyDown(KeyCode.E)){
             IncreaseLevel();
