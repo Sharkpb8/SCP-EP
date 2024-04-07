@@ -37,11 +37,9 @@ public class KeyCard_Door : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
-        if(distance < 5f && checkLevel()){
-            if(Input.GetKeyDown(KeyCode.F)){
+        if(distance < 5f && checkLevel() && Input.GetKeyDown(KeyCode.F)){
                 ToggleDoor();
                 agent.BuildNavMesh();
-            }
         }
     }
     void ToggleDoor()
