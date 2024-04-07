@@ -17,7 +17,6 @@ public class KeyCard : MonoBehaviour
         Renderer ColorRender = Color_part.GetComponent<Renderer>();
         colorindex=Level-1;
         ColorRender.material  = levelMaterials[colorindex];
-        InteractText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
