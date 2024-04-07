@@ -15,7 +15,6 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Frame;
     public GameObject Player;
     public int Level;
-    public TextMeshProUGUI OpenText;
     public  NavMeshSurface agent;
     public Material[] levelMaterials;
     private int colorindex;
@@ -39,13 +38,10 @@ public class KeyCard_Door : MonoBehaviour
     {
         float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
         if(distance < 5f && checkLevel()){
-            enable(true);
             if(Input.GetKeyDown(KeyCode.F)){
                 ToggleDoor();
                 agent.BuildNavMesh();
             }
-        }else{
-            enable(false);
         }
     }
     void ToggleDoor()
@@ -63,9 +59,5 @@ public class KeyCard_Door : MonoBehaviour
         }else{
             return false;
         }
-    }
-
-    private void enable(bool enable){
-        OpenText.gameObject.SetActive(enable);
     }
 }

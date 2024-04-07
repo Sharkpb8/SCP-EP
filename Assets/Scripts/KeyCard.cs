@@ -9,7 +9,6 @@ public class KeyCard : MonoBehaviour
     public GameObject Color_part;
     public int Level;
     public GameObject Player;
-    public TextMeshProUGUI InteractText;
     public Material[] levelMaterials;
     private int colorindex;
     void Start()
@@ -24,16 +23,10 @@ public class KeyCard : MonoBehaviour
     {
         float distance = Vector3.Distance(Player.transform.position, transform.position);
         if(distance < 3f){
-            enable(true);
             if(Input.GetKeyDown(KeyCode.F)){
                 
             }
-        }else{
-            enable(false);
         }
     }
 
-    private void enable(bool enable){
-        InteractText.gameObject.SetActive(enable);
-    }
 }
