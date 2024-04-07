@@ -9,6 +9,7 @@ public class KeyCard : MonoBehaviour
     public GameObject Color_part;
     public int Level;
     public GameObject Player;
+    public TextMeshPro KeyCard_text;
     public Material[] levelMaterials;
     private int colorindex;
     private Stats stats;
@@ -19,6 +20,7 @@ public class KeyCard : MonoBehaviour
         Renderer ColorRender = Color_part.GetComponent<Renderer>();
         colorindex=Level-1;
         ColorRender.material  = levelMaterials[colorindex];
+        KeyCard_text.text = "Level "+Level;
     }
 
     // Update is called once per frame
