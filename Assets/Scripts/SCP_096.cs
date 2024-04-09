@@ -9,8 +9,9 @@ public class SCP_096 : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     public GameObject face;
-    public Transform Camera;
+    public Transform playerCamera;
     public  NavMeshAgent agent;
+    private Boolean faceseen;
     void Start()
     {
         
@@ -19,11 +20,16 @@ public class SCP_096 : MonoBehaviour
     
     void Update()
     {
-        ray = new Ray(Camera.position, transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.green);
-        if (Physics.Raycast(ray, out hit, 300) && hit.collider.gameObject == face)
-        {
-            agent.SetDestination(Camera.position);
+        if(!faceseen){
+            ray = new Ray(playerCamera.position, playerCamera.transform.forward);
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.green);
+            if (Physics.Raycast(ray, out hit, 300) && hit.collider.gameObject == face)
+            {
+                faceseen = true;
+            }
+        }else{
+            agent.SetDestination(playerCamera.position);
         }
+        
     }
 }
