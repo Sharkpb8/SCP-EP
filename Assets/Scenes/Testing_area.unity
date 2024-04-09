@@ -2019,7 +2019,7 @@ MonoBehaviour:
   Color_part: {fileID: 889309338}
   Level: 5
   Player: {fileID: 1355772369}
-  KeyCard_text: {fileID: 0}
+  KeyCard_text: {fileID: 259480505}
   levelMaterials:
   - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
