@@ -13,7 +13,6 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Button;
     public GameObject Door;
     public GameObject Frame;
-    public GameObject Player;
     public int Level;
     public  NavMeshSurface agent;
     public Material[] levelMaterials;
@@ -36,7 +35,7 @@ public class KeyCard_Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(Player.transform.position, Door.transform.position);
+        float distance = Vector3.Distance(Camera.main.transform.position, Door.transform.position);
         if(distance < 5f && checkLevel() && Input.GetKeyDown(KeyCode.F)){
                 ToggleDoor();
                 agent.BuildNavMesh();
