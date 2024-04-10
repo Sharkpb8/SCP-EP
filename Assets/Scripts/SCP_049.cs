@@ -24,7 +24,11 @@ public class SCP_049 : MonoBehaviour
 
         }else{
             agent.SetDestination(PatrolPoints[currentWaypoint].position);
-            Debug.Log(PatrolPoints.Length);
+                currentWaypoint++;
+                if (currentWaypoint == PatrolPoints.Length)
+                {
+                    currentWaypoint = 0;
+                }
         }
         
     }
