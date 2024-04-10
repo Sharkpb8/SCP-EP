@@ -10,7 +10,7 @@ public class Uzi : MonoBehaviour
     public int MagazineCap = 40;
     public TextMeshProUGUI mag;
     private bool Shooting = true;
-    private int Ammo;
+    [HideInInspector] public int Ammo;
     Ray ray;
     RaycastHit hit;
 

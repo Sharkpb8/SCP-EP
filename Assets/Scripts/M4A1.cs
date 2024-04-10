@@ -11,7 +11,7 @@ public class M4A1 : MonoBehaviour
     public int MagazineCap = 30;
     public TextMeshProUGUI mag;
     private bool Shooting = true;
-    private int Ammo;
+    [HideInInspector] public int Ammo;
     Ray ray;
     RaycastHit hit;
 

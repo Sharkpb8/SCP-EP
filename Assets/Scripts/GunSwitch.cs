@@ -17,12 +17,6 @@ public class GunSwitch : MonoBehaviour
     
     void Start()
     {
-        M4A1 m4A1Script = Slot1_bh.GetComponent<M4A1>();
-        m4A1ScriptCapacity = m4A1Script.MagazineCap;
-
-        Uzi uziScript = Slot2_bh.GetComponent<Uzi>();
-        uziCapacity = uziScript.MagazineCap;
-
         Slot1.SetActive(true);
         Slot2.SetActive(false);
     }
@@ -34,13 +28,27 @@ public class GunSwitch : MonoBehaviour
         {
             Slot2.SetActive(false);
             Slot1.SetActive(true);
-            mag.text = m4A1ScriptCapacity+"/30";
+            mag.text = getM4A1_ammo()+"/30";
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             Slot1.SetActive(false);
             Slot2.SetActive(true);
-            mag.text = uziCapacity+"/40";
+            mag.text = getuzi_ammo()+"/40";
         }
+    }
+
+    public int getM4A1_ammo()
+    {
+        M4A1 m4A1Script = Slot1_bh.GetComponent<M4A1>();
+        m4A1ScriptCapacity = m4A1Script.Ammo;
+        return m4A1ScriptCapacity;
+    }
+
+    public int getuzi_ammo()
+    {
+        Uzi uziScript = Slot2_bh.GetComponent<Uzi>();
+        uziCapacity = uziScript.Ammo;
+        return uziCapacity;
     }
 }
