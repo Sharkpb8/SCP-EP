@@ -5,12 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Shoot : MonoBehaviour
+public class M4A1 : MonoBehaviour
 {
     public GameObject bullethole;
     public int MagazineCap = 30;
     public TextMeshProUGUI mag;
-    private bool shooting = true;
+    private bool M4A1ing = true;
     Ray ray;
     RaycastHit hit;
 
@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(shooting && Input.GetMouseButton(0) && MagazineCap > 0)
+        if(M4A1ing && Input.GetMouseButton(0) && MagazineCap > 0)
         {
             StartCoroutine(Fire());
             MagazineCap -= 1;
@@ -36,7 +36,7 @@ public class Shoot : MonoBehaviour
 
     IEnumerator Fire()
     {
-        shooting = false;
+        M4A1ing = false;
          Debug.Log("Started Coroutine at timestamp : " + Time.time);
         if (Physics.Raycast(ray, out hit, 500))
             {
@@ -44,6 +44,6 @@ public class Shoot : MonoBehaviour
             }
         yield return new WaitForSeconds(0.086f);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-        shooting = true;  
+        M4A1ing = true;  
     }
 }

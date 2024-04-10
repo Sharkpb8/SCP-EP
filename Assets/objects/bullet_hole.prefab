@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4340309069160906958}
   - component: {fileID: 5352660824789994704}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: bullet_hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
