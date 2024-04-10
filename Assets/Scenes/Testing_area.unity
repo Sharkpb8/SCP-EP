@@ -388,9 +388,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2690,6 +2690,7 @@ GameObject:
   - component: {fileID: 1355772371}
   - component: {fileID: 1355772376}
   - component: {fileID: 1355772377}
+  - component: {fileID: 1355772379}
   - component: {fileID: 1355772378}
   m_Layer: 3
   m_Name: Capsule
@@ -2842,9 +2843,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Level: 0
-  Pills: 0
+  Pills: 5
+  health: 100
   Level: {fileID: 1864849371}
   PillsCount: {fileID: 1853364516}
+  health_slider: {fileID: 239867485}
 --- !u!114 &1355772378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2865,20 @@ MonoBehaviour:
   Slot2: {fileID: 1986065750}
   Slot2_bh: {fileID: 1514407591}
   mag: {fileID: 432563481}
+--- !u!114 &1355772379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355772369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a76f0ec6816bc64ca924c08e7596c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: 20
+  health_slider: {fileID: 239867485}
 --- !u!1 &1365661959
 GameObject:
   m_ObjectHideFlags: 0

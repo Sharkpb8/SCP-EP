@@ -9,8 +9,10 @@ public class Stats : MonoBehaviour
 {
     public int Player_Level = 0;
     public int Pills = 0;
+    public float health = 100;
     public TextMeshProUGUI Level;
     public TextMeshProUGUI PillsCount;
+    public Slider health_slider;
 
     void Start()
     {
