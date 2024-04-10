@@ -12,8 +12,9 @@ public class SCP_049 : MonoBehaviour
     public  NavMeshAgent agent;
     private int currentWaypoint = 0;
     [HideInInspector] public int body_spawnpoints = 0;
-    private GameObject []bodies;
+    [HideInInspector] public GameObject []bodies;
     private Transform target;
+    private float distanceToBody = Mathf.Infinity;
     void Start()
     {
         bodies = GameObject.FindGameObjectsWithTag("Body");
@@ -22,9 +23,12 @@ public class SCP_049 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FindNearestBody();
+        if(bodies != null)
+        {
+            FindNearestBody();
+            distanceToBody = Vector3.Distance(target.position,transform.position);
+        }
         float distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
-        float distanceToBody = Vector3.Distance(target.position,transform.position);
         float distanceTopatrol = Vector3.Distance(PatrolPoints[currentWaypoint].position,transform.position);
         if(distanceToPlayer<10f){
             agent.SetDestination(Player.transform.position);

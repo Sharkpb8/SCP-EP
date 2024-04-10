@@ -7,7 +7,6 @@ public class Body : MonoBehaviour
     public GameObject SCP_049;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hifghjfgh");
         if (other.gameObject == SCP_049)
         {
             SCP_049 S49 = SCP_049.GetComponent<SCP_049>();
