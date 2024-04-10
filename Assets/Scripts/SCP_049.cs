@@ -11,7 +11,7 @@ public class SCP_049 : MonoBehaviour
     public GameObject SCP_49_2;
     public  NavMeshAgent agent;
     private int currentWaypoint = 0;
-    private int body_spawnpoints = 0;
+    [HideInInspector] public int body_spawnpoints = 0;
     private GameObject []bodies;
     private Transform target;
     void Start()
