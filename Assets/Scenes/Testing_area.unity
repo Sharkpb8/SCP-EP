@@ -2134,12 +2134,11 @@ Transform:
   m_GameObject: {fileID: 1011277757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -109.19, y: 1.46, z: 22.05}
+  m_LocalPosition: {x: -109.19, y: 1.46, z: 21.999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1996927405}
-  - {fileID: 1708722103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &1011277762
@@ -2179,11 +2178,9 @@ MonoBehaviour:
   PatrolPoints:
   - {fileID: 404151143}
   - {fileID: 1141527766}
-  SpawnPoints:
-  - {fileID: 1996927405}
-  - {fileID: 1708722103}
+  SpawnPoints: {fileID: 1996927405}
   Player: {fileID: 1355772369}
-  SCP_49_2: {fileID: 0}
+  SCP_49_2: {fileID: 5948794949718078065, guid: d6c94b2c3d6088747ba4f945e982d17d, type: 3}
   agent: {fileID: 1011277762}
 --- !u!54 &1011277764
 Rigidbody:
@@ -4106,37 +4103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1708722102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1708722103}
-  m_Layer: 0
-  m_Name: SCP-49-2 spawn point 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1708722103
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708722102}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1011277761}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1807349725
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,7 +4921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1996927405}
   m_Layer: 0
-  m_Name: SCP-49-2 spawn point 1
+  m_Name: SCP-49-2 spawn point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
