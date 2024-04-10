@@ -19,11 +19,12 @@ public class Healing : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H) && HavePills())
         {
             Stats stats = GetComponent<Stats>();
-            stats.Pills =- 1;
-            stats.health =+ heal;
+            stats.Pills -= 1;
+            stats.health += heal;
             if(stats.health > 100){
                 stats.health = 100;
             }
+            SetBar();
         }
     }
 

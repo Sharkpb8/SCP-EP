@@ -17,6 +17,7 @@ public class Stats : MonoBehaviour
     void Start()
     {
         PillsCount.text = "Pills lef: "+Pills;
+        health_slider.value = health;
     }
 
     void Update(){
