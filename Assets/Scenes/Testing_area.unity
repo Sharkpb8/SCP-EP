@@ -2843,8 +2843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Level: 0
-  Pills: 5
-  health: 40
+  Pills: 10
+  health: 0
   Level: {fileID: 1864849371}
   PillsCount: {fileID: 1853364516}
   health_slider: {fileID: 239867485}
@@ -2879,6 +2879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heal: 20
   health_slider: {fileID: 239867485}
+  PillsCount: {fileID: 1853364516}
 --- !u!1 &1365661959
 GameObject:
   m_ObjectHideFlags: 0
