@@ -11,8 +11,6 @@ public class SCP_049 : MonoBehaviour
     public GameObject SCP_49_2;
     public  NavMeshAgent agent;
     private int currentWaypoint = 0;
-    private Transform target;
-    private float distanceToBody = Mathf.Infinity;
 
     // Update is called once per frame
     void Update()
@@ -23,15 +21,11 @@ public class SCP_049 : MonoBehaviour
             agent.SetDestination(Player.transform.position);
 
         }else{
-            if(distanceToBody<distanceTopatrol){
-                agent.SetDestination(target.position);
-            }else{
-                agent.SetDestination(PatrolPoints[currentWaypoint].position);
-                currentWaypoint++;
-                if (currentWaypoint == PatrolPoints.Length)
-                {
-                    currentWaypoint = 0;
-                }
+            agent.SetDestination(PatrolPoints[currentWaypoint].position);
+            currentWaypoint++;
+            if (currentWaypoint == PatrolPoints.Length)
+            {
+                currentWaypoint = 0;
             }
         }
         
