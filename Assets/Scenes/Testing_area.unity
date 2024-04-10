@@ -2360,6 +2360,7 @@ GameObject:
   - component: {fileID: 1355772371}
   - component: {fileID: 1355772376}
   - component: {fileID: 1355772377}
+  - component: {fileID: 1355772378}
   m_Layer: 3
   m_Name: Capsule
   m_TagString: Player
@@ -2512,6 +2513,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player_Level: 0
   Level: {fileID: 1864849371}
+--- !u!114 &1355772378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355772369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe895ffd61dd764da5bcf8af409e7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slot1: {fileID: 8401927997285951881}
+  Slot1_bh: {fileID: 460091389}
+  Slot2: {fileID: 1986065750}
+  Slot2_bh: {fileID: 1514407591}
+  mag: {fileID: 432563481}
 --- !u!1 &1365661959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,6 +3441,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 889309342}
   m_SourcePrefab: {fileID: 100100000, guid: 37959dc2c42bc8a43b18f8a35f05c943, type: 3}
+--- !u!1 &1986065750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3b5a9963c73d5a43bc1e91b55dc0e56, type: 3}
+  m_PrefabInstance: {fileID: 1155414702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1986065751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3b5a9963c73d5a43bc1e91b55dc0e56, type: 3}
