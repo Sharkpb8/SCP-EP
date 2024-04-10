@@ -10,25 +10,31 @@ public class Uzi : MonoBehaviour
     public int MagazineCap = 40;
     public TextMeshProUGUI mag;
     private bool Shooting = true;
+    private int Ammo;
     Ray ray;
     RaycastHit hit;
+
+    void Start()
+    {
+        Ammo = MagazineCap;
+    }
 
     void Update()
     {
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(Shooting && Input.GetMouseButton(0) && MagazineCap > 0)
+        if(Shooting && Input.GetMouseButton(0) && Ammo > 0)
         {
             StartCoroutine(Fire());
-            MagazineCap -= 1;
-            mag.text = MagazineCap+"/40";
+            Ammo -= 1;
+            mag.text = Ammo+"/40";
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            MagazineCap = 40;
-            mag.text = MagazineCap+"/40";
+            Ammo = 40;
+            mag.text = Ammo+"/40";
         }
         
     }

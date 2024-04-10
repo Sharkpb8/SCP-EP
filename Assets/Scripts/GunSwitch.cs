@@ -20,7 +20,7 @@ public class GunSwitch : MonoBehaviour
         M4A1 m4A1Script = Slot1_bh.GetComponent<M4A1>();
         m4A1ScriptCapacity = m4A1Script.MagazineCap;
 
-        Uzi uziScript = Slot1_bh.GetComponent<Uzi>();
+        Uzi uziScript = Slot2_bh.GetComponent<Uzi>();
         uziCapacity = uziScript.MagazineCap;
 
         Slot1.SetActive(true);

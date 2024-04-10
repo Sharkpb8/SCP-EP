@@ -11,25 +11,31 @@ public class M4A1 : MonoBehaviour
     public int MagazineCap = 30;
     public TextMeshProUGUI mag;
     private bool Shooting = true;
+    private int Ammo;
     Ray ray;
     RaycastHit hit;
+
+    void Start()
+    {
+        Ammo = MagazineCap;
+    }
 
     void Update()
     {
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(Shooting && Input.GetMouseButton(0) && MagazineCap > 0)
+        if(Shooting && Input.GetMouseButton(0) && Ammo > 0)
         {
             StartCoroutine(Fire());
-            MagazineCap -= 1;
-            mag.text = MagazineCap+"/30";
+            Ammo -= 1;
+            mag.text = Ammo+"/30";
         }
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            MagazineCap = 30;
-            mag.text = MagazineCap+"/30";
+            Ammo = 30;
+            mag.text = Ammo+"/30";
         }
         
     }
