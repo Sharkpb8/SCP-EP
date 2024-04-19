@@ -27,7 +27,6 @@ public class SCP_049 : MonoBehaviour
                 Instantiate(SCP_49_2, randomPoint, Quaternion.identity);
                 SCP_049_2_count++;
             }
-            Debug.Log(RandomPosition(transform.position, 5f));
             /* Instantiate(SCP_49_2,SpawnPoints); */
 
         }else{
@@ -48,8 +47,9 @@ public class SCP_049 : MonoBehaviour
     {
         Vector3 randDirection = Random.insideUnitSphere * distance;
         randDirection += origin;
-        NavMeshHit navHit;
+        /* NavMeshHit navHit;
         NavMesh.SamplePosition(randDirection, out navHit, distance,0);
-        return navHit.position;
+        return navHit.position; */
+        return randDirection;
     }
 }

@@ -845,7 +845,7 @@ MonoBehaviour:
   - {fileID: 404151143}
   - {fileID: 1141527766}
   Player: {fileID: 1355772369}
-  SCP_49_2: {fileID: 5948794949718078065, guid: d6c94b2c3d6088747ba4f945e982d17d, type: 3}
+  SCP_49_2: {fileID: 1153885313870761011, guid: d6c94b2c3d6088747ba4f945e982d17d, type: 3}
   agent: {fileID: 407201032}
 --- !u!195 &407201032
 NavMeshAgent:

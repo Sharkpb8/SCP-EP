@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class SCP_49_2 : MonoBehaviour
 {
-    public GameObject Player;
     public float TimeToDestroy = 30f;
     public  NavMeshAgent agent;
+    private GameObject Player;
     void Start()
     {
+        Player = GameObject.Find("Capsule");
         Destroy(gameObject,TimeToDestroy);
     }
 
