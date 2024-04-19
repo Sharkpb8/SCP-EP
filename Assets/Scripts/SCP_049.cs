@@ -9,7 +9,7 @@ public class SCP_049 : MonoBehaviour
     public Transform []PatrolPoints;
     /* public Transform SpawnPoints; */
     public GameObject Player;
-    /* public GameObject SCP_49_2; */
+    public GameObject SCP_49_2;
     public  NavMeshAgent agent;
     private int currentWaypoint = 0;
     private int SCP_049_2_count = 0;
@@ -21,6 +21,13 @@ public class SCP_049 : MonoBehaviour
         float distanceTopatrol = Vector3.Distance(PatrolPoints[currentWaypoint].position,transform.position);
         if(distanceToPlayer<10f){
             agent.SetDestination(Player.transform.position);
+            if(SCP_049_2_count<5)
+            {
+                Vector3 randomPoint = RandomPosition(transform.position, 5f);
+                Instantiate(SCP_49_2, randomPoint, Quaternion.identity);
+                SCP_049_2_count++;
+            }
+            Debug.Log(RandomPosition(transform.position, 5f));
             /* Instantiate(SCP_49_2,SpawnPoints); */
 
         }else{
@@ -35,5 +42,14 @@ public class SCP_049 : MonoBehaviour
             }
         }
         
+    }
+
+    Vector3 RandomPosition(Vector3 origin, float distance)
+    {
+        Vector3 randDirection = Random.insideUnitSphere * distance;
+        randDirection += origin;
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(randDirection, out navHit, distance,0);
+        return navHit.position;
     }
 }
