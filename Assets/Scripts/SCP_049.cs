@@ -13,6 +13,7 @@ public class SCP_049 : MonoBehaviour
     public  NavMeshAgent agent;
     private int currentWaypoint = 0;
     private int SCP_049_2_count = 0;
+    private bool spawning = true;
 
     // Update is called once per frame
     void Update()
@@ -23,9 +24,11 @@ public class SCP_049 : MonoBehaviour
             agent.SetDestination(Player.transform.position);
             if(SCP_049_2_count<5)
             {
-                Vector3 randomPoint = RandomPosition(transform.position, 5f);
-                Instantiate(SCP_49_2, randomPoint, Quaternion.identity);
-                SCP_049_2_count++;
+                if(spawning)
+                {
+                    StartCoroutine(Spawn_SCP_49_2());
+                    SCP_049_2_count++;
+                }
             }
             /* Instantiate(SCP_49_2,SpawnPoints); */
 
@@ -51,5 +54,18 @@ public class SCP_049 : MonoBehaviour
         NavMesh.SamplePosition(randDirection, out navHit, distance,0);
         return navHit.position; */
         return randDirection;
+    }
+
+    IEnumerator Spawn_SCP_49_2()
+    {
+        spawning = false;
+        Debug.Log("1");
+        Vector3 randomPoint = RandomPosition(transform.position, 5f);
+        Debug.Log("2");
+        Instantiate(SCP_49_2, randomPoint, Quaternion.identity);
+        Debug.Log("3");
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("4");
+        spawning = true;
     }
 }
