@@ -5,11 +5,17 @@ using UnityEngine;
 public class Snap : MonoBehaviour
 {
     public GameObject player;
+    private Stats stats;
+
+    void Start()
+    {
+        stats = player.GetComponent<Stats>();
+    }
     private void OnTriggerEnter(Collider colider)
     {
         if(colider.tag == "Player")
         {
-            Destroy(player);
+            stats.health = 0;
         }
         
     }

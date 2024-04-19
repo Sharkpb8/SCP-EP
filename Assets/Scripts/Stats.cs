@@ -22,6 +22,10 @@ public class Stats : MonoBehaviour
 
     void Update(){
         Level.text = Player_Level.ToString();
+        if(health == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

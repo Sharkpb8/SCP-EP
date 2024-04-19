@@ -59,13 +59,9 @@ public class SCP_049 : MonoBehaviour
     IEnumerator Spawn_SCP_49_2()
     {
         spawning = false;
-        Debug.Log("1");
         Vector3 randomPoint = RandomPosition(transform.position, 5f);
-        Debug.Log("2");
         Instantiate(SCP_49_2, randomPoint, Quaternion.identity);
-        Debug.Log("3");
         yield return new WaitForSeconds(1.5f);
-        Debug.Log("4");
         spawning = true;
     }
 }
