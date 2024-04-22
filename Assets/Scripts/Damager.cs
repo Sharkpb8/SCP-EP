@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damager : MonoBehaviour
 {
     private bool isPlayerInside = false;
-    private const float damagePerSecond = 2f;
+    private const float damagePerSecond = 20f;
 
     private void OnTriggerEnter(Collider other)
     {
