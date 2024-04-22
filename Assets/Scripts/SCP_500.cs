@@ -9,10 +9,11 @@ public class SCP_500 : MonoBehaviour
     public TextMeshProUGUI PillsCount;
     public int Ammount;
     public GameObject player;
-    private void OnTriggerEnter(Collider other)
+
+    void Update()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
+        float distance = Vector3.Distance(player.transform.position, transform.position);
+        if(distance < 5f && Input.GetKeyDown(KeyCode.F)){
             Stats stats = player.GetComponent<Stats>();
             stats.Pills =stats.Pills+Ammount;
             PillsCount.text = "Pills lef: "+stats.Pills;

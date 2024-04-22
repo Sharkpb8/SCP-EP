@@ -1577,7 +1577,7 @@ GameObject:
   - component: {fileID: 527596866}
   m_Layer: 0
   m_Name: SCP-500
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1612,7 +1612,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3967,6 +3967,7 @@ MonoBehaviour:
   bullethole: {fileID: 4749064439322415511, guid: 3d7617afbeef3ca4f9ad001d414ecf7d, type: 3}
   MagazineCap: 40
   mag: {fileID: 432563481}
+  damage: 4
   Ammo: 0
 --- !u!1 &1566382554
 GameObject:
