@@ -14,7 +14,6 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Door;
     public GameObject Frame;
     public int Level;
-    public  NavMeshSurface agent;
     public Material[] levelMaterials;
     private int colorindex;
     private bool DoorEnabled = true;
@@ -24,12 +23,13 @@ public class KeyCard_Door : MonoBehaviour
     void Start()
     {
         GameObject statsObject = GameObject.Find("Capsule");
-        stats = statsObject.GetComponent<Stats>();
+        Stats stats = statsObject.GetComponent<Stats>();
         colorindex=Level-1;
         Renderer buttonRenderer = Button.GetComponent<Renderer>();
         buttonRenderer.material  = levelMaterials[colorindex];
         doorCollider = Door.GetComponent<Collider>();
         frameCollider = Frame.GetComponent<Collider>();
+        
     }
 
     // Update is called once per frame
@@ -37,8 +37,10 @@ public class KeyCard_Door : MonoBehaviour
     {
         float distance = Vector3.Distance(Camera.main.transform.position, Door.transform.position);
         if(distance < 5f && checkLevel() && Input.GetKeyDown(KeyCode.F)){
-                ToggleDoor();
-                agent.BuildNavMesh();
+            ToggleDoor();
+            GameObject NavRebuild = GameObject.Find("NavMesh Rebuilder");
+            NavMesh_ReBuilder nmb = NavRebuild.GetComponent<NavMesh_ReBuilder>();
+            nmb.RebuildMesh();
         }
     }
     void ToggleDoor()
