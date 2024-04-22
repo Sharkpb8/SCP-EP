@@ -22,10 +22,15 @@ public class Stats : MonoBehaviour
 
     void Update(){
         Level.text = Player_Level.ToString();
-        if(health == 0)
+        if(health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void takeDamage(float damage)
+    {
+        health -= damage;
     }
 
 }
