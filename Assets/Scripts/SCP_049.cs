@@ -64,4 +64,9 @@ public class SCP_049 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         spawning = true;
     }
+
+    public void DecreaseSCP_49_2()
+    {
+        SCP_049_2_count -=1;
+    }
 }
