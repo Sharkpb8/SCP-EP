@@ -23,9 +23,15 @@ public class SCP_49_2 : MonoBehaviour
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(TimeToDestroy);
+        Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
         SCP49 = GameObject.Find("SCP-049");
         SCP_049 s49 = SCP49.GetComponent<SCP_049>();
-        Destroy(gameObject);
         s49.DecreaseSCP_49_2();
     }
+
+
 }
