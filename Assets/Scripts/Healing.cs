@@ -11,7 +11,6 @@ public class Healing : MonoBehaviour
     public float heal;
     public Slider health_slider;
     public TextMeshProUGUI PillsCount;
-    private float barvalue;
     void Start()
     {
         
@@ -28,7 +27,6 @@ public class Healing : MonoBehaviour
             if(stats.health > 100){
                 stats.health = 100;
             }
-            SetBar();
             PillsCount.text = "Pills lef: "+stats.Pills;
         }
     }
@@ -39,19 +37,6 @@ public class Healing : MonoBehaviour
             return true;
         }else{
             return false;
-        }
-    }
-
-    public void SetBar(){
-        Stats stats = GetComponent<Stats>();
-        if(stats.health<40)
-        {
-            barvalue = stats.health/2;
-            health_slider.value = barvalue;
-        }
-        else
-        {
-            health_slider.value = stats.health;
         }
     }
 

@@ -13,6 +13,7 @@ public class Stats : MonoBehaviour
     public TextMeshProUGUI Level;
     public TextMeshProUGUI PillsCount;
     public Slider health_slider;
+    private float barvalue;
 
     void Start()
     {
@@ -26,11 +27,25 @@ public class Stats : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SetBar();
     }
 
     public void takeDamage(float damage)
     {
         health -= damage;
+    }
+
+    private void SetBar(){
+        Stats stats = GetComponent<Stats>();
+        if(stats.health<40)
+        {
+            barvalue = stats.health/2;
+            health_slider.value = barvalue;
+        }
+        else
+        {
+            health_slider.value = stats.health;
+        }
     }
 
 }
