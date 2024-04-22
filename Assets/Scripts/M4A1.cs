@@ -10,6 +10,7 @@ public class M4A1 : MonoBehaviour
     public GameObject bullethole;
     public int MagazineCap = 30;
     public TextMeshProUGUI mag;
+    public float damage = 10f;
     private bool Shooting = true;
     [HideInInspector] public int Ammo;
     Ray ray;
@@ -43,13 +44,28 @@ public class M4A1 : MonoBehaviour
     IEnumerator Fire()
     {
         Shooting = false;
-         Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        /*  Debug.Log("Started Coroutine at timestamp : " + Time.time); */
         if (Physics.Raycast(ray, out hit, 500))
             {
-                Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal));
+                /* Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal)); */
+                if(hit.transform.CompareTag("Enemy"))
+                {
+                    Debug.Log("E. ");
+                    DamageEnemies(hit.transform.gameObject);
+                    Debug.Log("B. ");
+                }
+                Debug.Log("D. ");
             }
         yield return new WaitForSeconds(0.086f);
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        /* Debug.Log("Finished Coroutine at timestamp : " + Time.time); */
         Shooting = true;  
+    }
+
+    public void DamageEnemies(GameObject enemy)
+    {
+        Debug.Log("C. ");
+        enemy_stats es = enemy.GetComponent<enemy_stats>();
+        es.takeDamage(damage);
+        Debug.Log("A. "+es.health);
     }
 }

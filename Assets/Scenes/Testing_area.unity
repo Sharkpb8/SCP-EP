@@ -1244,6 +1244,7 @@ MonoBehaviour:
   bullethole: {fileID: 4749064439322415511, guid: 3d7617afbeef3ca4f9ad001d414ecf7d, type: 3}
   MagazineCap: 30
   mag: {fileID: 432563481}
+  damage: 10
   Ammo: 0
 --- !u!1 &509676674
 GameObject:
