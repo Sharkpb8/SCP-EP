@@ -50,11 +50,8 @@ public class M4A1 : MonoBehaviour
                 /* Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal)); */
                 if(hit.transform.CompareTag("Enemy"))
                 {
-                    Debug.Log("E. ");
                     DamageEnemies(hit.transform.gameObject);
-                    Debug.Log("B. ");
                 }
-                Debug.Log("D. ");
             }
         yield return new WaitForSeconds(0.086f);
         /* Debug.Log("Finished Coroutine at timestamp : " + Time.time); */
@@ -63,9 +60,7 @@ public class M4A1 : MonoBehaviour
 
     public void DamageEnemies(GameObject enemy)
     {
-        Debug.Log("C. ");
         enemy_stats es = enemy.GetComponent<enemy_stats>();
         es.takeDamage(damage);
-        Debug.Log("A. "+es.health);
     }
 }

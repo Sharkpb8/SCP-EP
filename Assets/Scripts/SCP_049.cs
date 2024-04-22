@@ -20,7 +20,7 @@ public class SCP_049 : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
         float distanceTopatrol = Vector3.Distance(PatrolPoints[currentWaypoint].position,transform.position);
-        if(distanceToPlayer<10f){
+        if(distanceToPlayer<20f){
             agent.SetDestination(Player.transform.position);
             if(SCP_049_2_count<5)
             {

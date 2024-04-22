@@ -9,6 +9,7 @@ public class Uzi : MonoBehaviour
     public GameObject bullethole;
     public int MagazineCap = 40;
     public TextMeshProUGUI mag;
+     public float damage = 4f;
     private bool Shooting = true;
     [HideInInspector] public int Ammo;
     Ray ray;
@@ -42,13 +43,23 @@ public class Uzi : MonoBehaviour
     IEnumerator Fire()
     {
         Shooting = false;
-         Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        /*  Debug.Log("Started Coroutine at timestamp : " + Time.time); */
         if (Physics.Raycast(ray, out hit, 500))
             {
-                Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal));
+                /* Instantiate(bullethole,hit.point + (hit.normal *0.1f),Quaternion.FromToRotation(Vector3.up,hit.normal)); */
+                if(hit.transform.CompareTag("Enemy"))
+                {
+                    DamageEnemies(hit.transform.gameObject);
+                }
             }
         yield return new WaitForSeconds(0.010f);
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+       /*  Debug.Log("Finished Coroutine at timestamp : " + Time.time); */
         Shooting = true;  
+    }
+
+    public void DamageEnemies(GameObject enemy)
+    {
+        enemy_stats es = enemy.GetComponent<enemy_stats>();
+        es.takeDamage(damage);
     }
 }
