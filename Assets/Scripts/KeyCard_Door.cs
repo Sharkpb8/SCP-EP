@@ -23,7 +23,7 @@ public class KeyCard_Door : MonoBehaviour
     void Start()
     {
         GameObject statsObject = GameObject.Find("Capsule");
-        Stats stats = statsObject.GetComponent<Stats>();
+        stats = statsObject.GetComponent<Stats>();
         colorindex=Level-1;
         Renderer buttonRenderer = Button.GetComponent<Renderer>();
         buttonRenderer.material  = levelMaterials[colorindex];
@@ -38,9 +38,7 @@ public class KeyCard_Door : MonoBehaviour
         float distance = Vector3.Distance(Camera.main.transform.position, Door.transform.position);
         if(distance < 5f && checkLevel() && Input.GetKeyDown(KeyCode.F)){
             ToggleDoor();
-            GameObject NavRebuild = GameObject.Find("NavMesh Rebuilder");
-            NavMesh_ReBuilder nmb = NavRebuild.GetComponent<NavMesh_ReBuilder>();
-            nmb.RebuildMesh();
+            rebuild();
         }
     }
     void ToggleDoor()
@@ -58,5 +56,12 @@ public class KeyCard_Door : MonoBehaviour
         }else{
             return false;
         }
+    }
+
+    private void rebuild()
+    {
+        GameObject NavRebuild = GameObject.Find("NavMesh Rebuilder");
+        NavMesh_ReBuilder nmb = NavRebuild.GetComponent<NavMesh_ReBuilder>();
+        nmb.RebuildMesh();
     }
 }
