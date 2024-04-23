@@ -14,14 +14,16 @@ public class SCP_049 : MonoBehaviour
     private int currentWaypoint = 0;
     private int SCP_049_2_count = 0;
     private bool spawning = true;
+    private float spotingrange = 20f;
 
     // Update is called once per frame
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(Player.transform.position, transform.position);
         float distanceTopatrol = Vector3.Distance(PatrolPoints[currentWaypoint].position,transform.position);
-        if(distanceToPlayer<20f){
+        if(distanceToPlayer<spotingrange){
             agent.SetDestination(Player.transform.position);
+            setspotingrange(true);
             if(SCP_049_2_count<5)
             {
                 if(spawning)
@@ -33,6 +35,7 @@ public class SCP_049 : MonoBehaviour
             /* Instantiate(SCP_49_2,SpawnPoints); */
 
         }else{
+            setspotingrange(false);
             agent.SetDestination(PatrolPoints[currentWaypoint].position);
             if(distanceTopatrol<1f)
             {
@@ -68,5 +71,17 @@ public class SCP_049 : MonoBehaviour
     public void DecreaseSCP_49_2()
     {
         SCP_049_2_count -=1;
+    }
+
+    private void setspotingrange(bool chasing)
+    {
+        if(chasing)
+        {
+            spotingrange = 40f; 
+        }else
+        {
+            spotingrange = 20f;
+        }
+
     }
 }
