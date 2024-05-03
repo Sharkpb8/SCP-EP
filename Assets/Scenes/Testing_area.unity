@@ -5521,6 +5521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787317753}
   - component: {fileID: 1787317754}
+  - component: {fileID: 1787317755}
   m_Layer: 0
   m_Name: power switch
   m_TagString: Untagged
@@ -5560,6 +5561,27 @@ MonoBehaviour:
   powered_color: {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
   notpowered_color: {fileID: 0}
   Player: {fileID: 1355772369}
+--- !u!95 &1787317755
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787317752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b7e8cd84fa74ea4c985acf1a93fac1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1807349725
 GameObject:
   m_ObjectHideFlags: 0
