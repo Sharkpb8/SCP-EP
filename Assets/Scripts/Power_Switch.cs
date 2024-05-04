@@ -6,15 +6,23 @@ public class Power_Switch : MonoBehaviour
 {
     public Material powered_color;
     public Material notpowered_color;
+    public Material defaultcolor;
+    public GameObject notpoweredcube;
+    public GameObject poweredcube;
     public GameObject Player;
+    public GameObject CubeStick;
+    public GameObject CubeThing;
     private Animator mAnimator;
     private bool powered = false;
-    Renderer ColorRender;
+    Renderer cube1Render;
+    Renderer cube2Render;
     void Start()
     {
         mAnimator = GetComponent<Animator>();
-        ColorRender = GetComponent<Renderer>();
-        ColorRender.material = notpowered_color;
+        cube1Render = notpoweredcube.GetComponent<Renderer>();
+        cube1Render.material = notpowered_color;
+        cube2Render = poweredcube.GetComponent<Renderer>();
+        cube2Render.material = defaultcolor;
     }
 
     // Update is called once per frame
@@ -27,7 +35,10 @@ public class Power_Switch : MonoBehaviour
             mpw.power();
             powered = true;
             mAnimator.SetTrigger("Turn_On");
-            ColorRender.material = powered_color;
+            cube1Render.material = defaultcolor;
+            cube2Render.material = powered_color;
+            CubeStick.tag = "Untagged";
+            CubeThing.tag = "Untagged";
         }   
     }
 }
