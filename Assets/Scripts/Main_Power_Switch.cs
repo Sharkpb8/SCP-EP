@@ -6,7 +6,7 @@ public class Main_Power_Switch : MonoBehaviour
 {
     public Material powered_color;
     public GameObject[] Lights;
-    public GameObject Switch;
+    /* public GameObject Switch; */
     private int generatorspowered = 0;
     private int lightindex = 0;
     private Renderer lightrenderer;
@@ -18,10 +18,10 @@ public class Main_Power_Switch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(generatorspowered == 3){
+        /* if(generatorspowered == 3){
             Renderer ColorRender = GetComponent<Renderer>();
             ColorRender.material = powered_color;
-        }
+        } */
     }
 
     public void power()

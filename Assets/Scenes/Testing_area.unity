@@ -3788,7 +3788,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powered_color: {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   Lights: []
-  Switch: {fileID: 0}
 --- !u!1 &983434419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8382,7 +8381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4425907347779872987}
   - component: {fileID: 4425907347779872989}
-  - component: {fileID: 4425907347779872988}
+  - component: {fileID: 4425907347779872990}
   m_Layer: 0
   m_Name: main switch
   m_TagString: Untagged
@@ -8428,24 +8427,6 @@ Transform:
   - {fileID: 9208702498090722815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &4425907347779872988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900165535882916449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9aa353de356e2e48ac997106772a2ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powered_color: {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
-  Lights:
-  - {fileID: 8900951335435762150}
-  - {fileID: 8601939898900550282}
-  - {fileID: 4368446799594666022}
-  Switch: {fileID: 146200137519315396}
 --- !u!65 &4425907347779872989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8467,6 +8448,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 6, z: 3.7}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4425907347779872990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900165535882916449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9aa353de356e2e48ac997106772a2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powered_color: {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
+  Lights:
+  - {fileID: 8900951335435762150}
+  - {fileID: 8601939898900550282}
+  - {fileID: 4368446799594666022}
 --- !u!23 &4480111101630393717
 MeshRenderer:
   m_ObjectHideFlags: 0
