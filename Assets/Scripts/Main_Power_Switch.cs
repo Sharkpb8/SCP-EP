@@ -27,12 +27,9 @@ public class Main_Power_Switch : MonoBehaviour
     public void power()
     {
         generatorspowered++;
-        Debug.Log("1."+lightindex);
         Debug.Log("lenght"+Lights.Length);
         lightrenderer = Lights[lightindex].GetComponent<Renderer>();
-        Debug.Log("2."+lightindex);
         lightindex++;
-        Debug.Log("3."+lightindex);
         lightrenderer.material = powered_color;
     }
 }
