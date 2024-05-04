@@ -7,10 +7,12 @@ public class Power_Switch : MonoBehaviour
     public Material powered_color;
     public Material notpowered_color;
     public GameObject Player;
+    private Animator mAnimator;
     private bool powered = false;
     Renderer ColorRender;
     void Start()
     {
+        mAnimator = GetComponent<Animator>();
         ColorRender = GetComponent<Renderer>();
         ColorRender.material = notpowered_color;
     }
@@ -24,6 +26,7 @@ public class Power_Switch : MonoBehaviour
             Main_Power_Switch mpw = statsObject.GetComponent<Main_Power_Switch>(); 
             mpw.power();
             powered = true;
+            mAnimator.SetTrigger("Turn_On");
             ColorRender.material = powered_color;
         }   
     }
