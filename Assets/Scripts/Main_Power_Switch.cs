@@ -23,6 +23,7 @@ public class Main_Power_Switch : MonoBehaviour
         if(generatorspowered == 3 && distance < 5f && Input.GetKeyDown(KeyCode.F))
         {
             mAnimator.SetTrigger("Turn On");
+            gameObject.tag = "Untagged";
         }
     }
 
