@@ -12,6 +12,7 @@ public class Power_Switch : MonoBehaviour
     public GameObject Player;
     public GameObject CubeStick;
     public GameObject CubeThing;
+    public GameObject MainSwitch;
     private Animator mAnimator;
     private bool powered = false;
     Renderer cube1Render;
@@ -30,8 +31,7 @@ public class Power_Switch : MonoBehaviour
     {
         float distance = Vector3.Distance(Player.transform.position, transform.position);
         if(distance < 5f && Input.GetKeyDown(KeyCode.F) && !powered){
-            GameObject statsObject = GameObject.Find("main switch");
-            Main_Power_Switch mpw = statsObject.GetComponent<Main_Power_Switch>(); 
+            Main_Power_Switch mpw = MainSwitch.GetComponent<Main_Power_Switch>(); 
             mpw.power();
             powered = true;
             mAnimator.SetTrigger("Turn_On");
