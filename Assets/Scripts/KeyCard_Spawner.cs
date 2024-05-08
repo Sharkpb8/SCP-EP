@@ -5,7 +5,6 @@ using UnityEngine;
 public class KeyCard_Spawner : MonoBehaviour
 {
     public GameObject[] spawns;
-    public int Keycard_Level;
     public GameObject Keycard;
     private int chance;
     private int roll;
@@ -18,7 +17,8 @@ public class KeyCard_Spawner : MonoBehaviour
             roll = Random.Range(1,chance);
             if(roll == 1 && !spawned)
             {
-                Instantiate(Keycard, spawns[i].transform.position, Quaternion.identity);
+                Quaternion spawnRotation = Quaternion.Euler(0, 90, 90);
+                Instantiate(Keycard, spawns[i].transform.position, spawnRotation);
                 spawned = true;
             }
         }
