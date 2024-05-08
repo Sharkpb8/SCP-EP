@@ -14,7 +14,7 @@ public class SCP_049 : MonoBehaviour
     private int currentWaypoint = 0;
     private int SCP_049_2_count = 0;
     private bool spawning = true;
-    private float spotingrange = 20f;
+    private float spotingrange = 12f;
 
     // Update is called once per frame
     void Update()
