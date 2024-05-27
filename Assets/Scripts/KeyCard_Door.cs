@@ -11,7 +11,7 @@ using Unity.AI.Navigation;
 public class KeyCard_Door : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject Button;
+    public GameObject[] Button;
     public int Level;
     public Animator mAnimator;
     public Material[] levelMaterials;
@@ -22,8 +22,11 @@ public class KeyCard_Door : MonoBehaviour
     {
         stats = Player.GetComponent<Stats>();
         colorindex=Level-1;
-        Renderer buttonRenderer = Button.GetComponent<Renderer>();
+        for(int i=0; i<Button.Length;i++)
+        {
+        Renderer buttonRenderer = Button[i].GetComponent<Renderer>();
         buttonRenderer.material  = levelMaterials[colorindex];
+        }
         
     }
 
