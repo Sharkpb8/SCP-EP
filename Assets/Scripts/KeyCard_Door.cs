@@ -14,6 +14,7 @@ public class KeyCard_Door : MonoBehaviour
     public GameObject Door;
     public GameObject Frame;
     public int Level;
+    public Animator mAnimator;
     public Material[] levelMaterials;
     private int colorindex;
     private bool DoorEnabled = true;
