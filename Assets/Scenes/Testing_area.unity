@@ -8968,6 +8968,7 @@ MonoBehaviour:
   - {fileID: 55280318}
   - {fileID: 1838826448}
   - {fileID: 764132166}
+  - {fileID: 934108371}
 --- !u!65 &722931507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25527,6 +25528,8 @@ GameObject:
   - component: {fileID: 2098090961}
   - component: {fileID: 2098090960}
   - component: {fileID: 2098090959}
+  - component: {fileID: 2098090966}
+  - component: {fileID: 2098090965}
   m_Layer: 0
   m_Name: SCP-966
   m_TagString: Untagged
@@ -25659,6 +25662,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2098090965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098090958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2098090966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098090958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338878b65b70b8c4fb8f6daea466f217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2130249041
 GameObject:
   m_ObjectHideFlags: 0
