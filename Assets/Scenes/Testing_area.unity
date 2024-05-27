@@ -1572,10 +1572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afbbd39f261b14ba0c6b472c18dc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Button: {fileID: 1179820254}
-  Door: {fileID: 662632559}
-  Frame: {fileID: 119177222}
   Level: 1
+  mAnimator: {fileID: 0}
   levelMaterials:
   - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
@@ -2272,10 +2272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afbbd39f261b14ba0c6b472c18dc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Button: {fileID: 1567692660}
-  Door: {fileID: 1862051870}
-  Frame: {fileID: 158341619}
   Level: 2
+  mAnimator: {fileID: 0}
   levelMaterials:
   - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
@@ -14682,10 +14682,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afbbd39f261b14ba0c6b472c18dc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Button: {fileID: 1172469969}
-  Door: {fileID: 1314231645}
-  Frame: {fileID: 1206100947}
   Level: 1
+  mAnimator: {fileID: 0}
   levelMaterials:
   - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
@@ -26117,6 +26117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652315520276}
   - component: {fileID: 919132148391794607}
+  - component: {fileID: 919132148391794608}
   m_Layer: 0
   m_Name: keycard_door
   m_TagString: Untagged
@@ -26136,11 +26137,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afbbd39f261b14ba0c6b472c18dc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Button: {fileID: 0}
-  Door: {fileID: 0}
-  Frame: {fileID: 0}
-  Level: 0
-  levelMaterials: []
+  Player: {fileID: 1355772369}
+  Button: {fileID: 6821887586998766979}
+  Level: 3
+  mAnimator: {fileID: 919132148391794608}
+  levelMaterials:
+  - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
+  - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
+  - {fileID: 2100000, guid: 0054cb9926e9738469fc5e5bc5dc1e1a, type: 2}
+  - {fileID: 2100000, guid: 5c473778f575bf149929b59f5325f80a, type: 2}
+  - {fileID: 2100000, guid: d71b4be47b75ddc46bd44daf599fcf38, type: 2}
+--- !u!95 &919132148391794608
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148391794606}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0062ee107d8b164782312a4d097f020, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1112924213180928538
 GameObject:
   m_ObjectHideFlags: 0
@@ -26784,10 +26811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3afbbd39f261b14ba0c6b472c18dc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Button: {fileID: 1363072878822116978}
-  Door: {fileID: 4432530307986876198}
-  Frame: {fileID: 874608223722408468}
   Level: 3
+  mAnimator: {fileID: 0}
   levelMaterials:
   - {fileID: 2100000, guid: 6ce12b2fc01019e479c2a98104781e1b, type: 2}
   - {fileID: 2100000, guid: 3fc85fb180ed8464b92ea99bb1e07286, type: 2}
@@ -26915,7 +26942,7 @@ GameObject:
   - component: {fileID: 8771444546173845058}
   m_Layer: 0
   m_Name: Button2
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27416,7 +27443,7 @@ GameObject:
   - component: {fileID: 3574604348689249005}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
