@@ -25,7 +25,8 @@ public class KeyCard_Spawner : MonoBehaviour
 
         if(!spawned)
         {
-            Instantiate(Keycard, spawns[0].transform.position, Quaternion.identity);
+            Quaternion spawnRotation = Quaternion.Euler(0, 90, 90);
+            Instantiate(Keycard, spawns[0].transform.position, spawnRotation);
         }
     }
 }
