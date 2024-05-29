@@ -8,7 +8,7 @@ public class Main_Power_Switch : MonoBehaviour
     public GameObject[] Lights;
     public GameObject Player;
     public Animator mAnimator;
-    public GameObject Large_Door;
+    public Animator DoorAnimator;
     private int generatorspowered = 0;
     private int lightindex = 0;
     private Renderer lightrenderer;
@@ -20,8 +20,7 @@ public class Main_Power_Switch : MonoBehaviour
         if(/* generatorspowered == 3 && */ distance < 5f && Input.GetKeyDown(KeyCode.F))
         {
             mAnimator.SetTrigger("Turn On");
-            LargeDoor_Open ld = GetComponent<LargeDoor_Open>();
-            ld.OpenDoor();
+            DoorAnimator.SetTrigger("Open");
             gameObject.tag = "Untagged";
         }
     }
