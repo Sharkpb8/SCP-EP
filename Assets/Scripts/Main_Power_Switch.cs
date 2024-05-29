@@ -17,7 +17,7 @@ public class Main_Power_Switch : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(Player.transform.position, transform.position);
-        if(generatorspowered == 3 && distance < 5f && Input.GetKeyDown(KeyCode.F))
+        if(/* generatorspowered == 3 && */ distance < 5f && Input.GetKeyDown(KeyCode.F))
         {
             mAnimator.SetTrigger("Turn On");
             DoorAnimator.SetTrigger("Open");
