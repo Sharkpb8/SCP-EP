@@ -11,7 +11,9 @@ public class M4A1 : MonoBehaviour
     public int MagazineCap = 30;
     public TextMeshProUGUI mag;
     public float damage = 10f;
+    public Animator mAnimator;
     private bool Shooting = true;
+    private bool Reloading = false;
     [HideInInspector] public int Ammo;
     Ray ray;
     RaycastHit hit;
@@ -26,17 +28,16 @@ public class M4A1 : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(Shooting && Input.GetMouseButton(0) && Ammo > 0)
+        if(Shooting && Input.GetMouseButton(0) && Ammo > 0 && !Reloading)
         {
             StartCoroutine(Fire());
             Ammo -= 1;
             mag.text = Ammo+"/30";
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && !Reloading)
         {
-            Ammo = 30;
-            mag.text = Ammo+"/30";
+            StartCoroutine(Reload());
         }
         
     }
@@ -62,5 +63,15 @@ public class M4A1 : MonoBehaviour
     {
         enemy_stats es = enemy.GetComponent<enemy_stats>();
         es.takeDamage(damage);
+    }
+
+    IEnumerator Reload()
+    {
+        Reloading = true;
+        mAnimator.SetTrigger("Reload");
+        yield return new WaitForSeconds(1.9f);
+        Ammo = 30;
+        mag.text = Ammo+"/30";
+        Reloading = false;
     }
 }

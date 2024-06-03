@@ -8309,6 +8309,7 @@ MonoBehaviour:
   MagazineCap: 30
   mag: {fileID: 432563481}
   damage: 10
+  mAnimator: {fileID: 8401927997285951882}
   Ammo: 0
 --- !u!1 &466175875
 GameObject:
@@ -38009,7 +38010,7 @@ Transform:
   m_GameObject: {fileID: 8401927997285951881}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: -0.49999997, z: -0.50000006, w: 0.49999997}
-  m_LocalPosition: {x: 0.40079212, y: -0.337, z: -0.052509308}
+  m_LocalPosition: {x: 0.40079212, y: -0.337, z: 0.582}
   m_LocalScale: {x: 0.05, y: 0.050000004, z: 0.049999997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38287,6 +38288,7 @@ GameObject:
   - component: {fileID: 7403247972460652412}
   - component: {fileID: 5092678763238332293}
   - component: {fileID: 7712881221053932180}
+  - component: {fileID: 8401927997285951882}
   m_Layer: 3
   m_Name: M4A1
   m_TagString: Untagged
@@ -38294,6 +38296,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &8401927997285951882
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401927997285951881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a25651809ce1cba4083a0fdf55435620, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8499938937952890875
 Transform:
   m_ObjectHideFlags: 0
