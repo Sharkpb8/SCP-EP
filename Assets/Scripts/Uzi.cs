@@ -9,8 +9,10 @@ public class Uzi : MonoBehaviour
     public GameObject bullethole;
     public int MagazineCap = 40;
     public TextMeshProUGUI mag;
-     public float damage = 4f;
+    public float damage = 4f;
+    public Animator mAnimator;
     private bool Shooting = true;
+    private bool Reloading = false;
     [HideInInspector] public int Ammo;
     Ray ray;
     RaycastHit hit;
@@ -32,10 +34,9 @@ public class Uzi : MonoBehaviour
             mag.text = Ammo+"/40";
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && !Reloading)
         {
-            Ammo = 40;
-            mag.text = Ammo+"/40";
+            StartCoroutine(Reload());
         }
         
     }
@@ -61,5 +62,15 @@ public class Uzi : MonoBehaviour
     {
         enemy_stats es = enemy.GetComponent<enemy_stats>();
         es.takeDamage(damage);
+    }
+
+    IEnumerator Reload()
+    {
+        Reloading = true;
+        mAnimator.SetTrigger("Reload");
+        yield return new WaitForSeconds(1.9f);
+        Ammo = 40;
+        mag.text = Ammo+"/40";
+        Reloading = false;
     }
 }
