@@ -27,7 +27,7 @@ public class Uzi : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(Shooting && Input.GetMouseButton(0) && Ammo > 0)
+        if(Shooting && Input.GetMouseButton(0) && Ammo > 0 && !Reloading)
         {
             StartCoroutine(Fire());
             Ammo -= 1;
