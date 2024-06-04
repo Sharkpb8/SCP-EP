@@ -21,12 +21,19 @@ public class PauseMenu : MonoBehaviour
         resolutions = Screen.resolutions;
         resolutiondropdown. ClearOptions();
         List<string> options = new List<string>();
+        int resindex = 0;
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                resindex = i;
+            }
         }
         resolutiondropdown. AddOptions(options);
+        resolutiondropdown.value = resindex;
+        resolutiondropdown.RefreshShownValue();
     }
 
     // Update is called once per frame
@@ -82,5 +89,11 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.LogWarning("Quit");
         Application.Quit();
+    }
+
+    public void SetResolution(int resindex)
+    {
+        Resolution res = resolutions[resindex];
+        Screen.SetResolution(res.width, res.height,Screen.fullScreen);
     }
 }
