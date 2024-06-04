@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseM;
+    public GameObject SettingsM;
     public static bool paused = false;
     void Start()
     {
         PauseM.SetActive(false);
+        SettingsM.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,6 +53,14 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-1);
         Time.timeScale = 1f;
         paused = false;
+    }
+
+    public void Settings()
+    {
+        SettingsM.SetActive(true);
+        PauseM.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Quit()
