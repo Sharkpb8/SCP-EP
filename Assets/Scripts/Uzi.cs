@@ -27,14 +27,14 @@ public class Uzi : MonoBehaviour
         ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * 20, Color.red);
 
-        if(Shooting && Input.GetMouseButton(0) && Ammo > 0 && !Reloading)
+        if(Shooting && Input.GetMouseButton(0) && Ammo > 0 && !Reloading && !PauseMenu.paused)
         {
             StartCoroutine(Fire());
             Ammo -= 1;
             mag.text = Ammo+"/40";
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && !Reloading)
+        if(Input.GetKeyDown(KeyCode.R) && !Reloading && !PauseMenu.paused)
         {
             StartCoroutine(Reload());
         }
