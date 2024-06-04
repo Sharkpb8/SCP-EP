@@ -2,16 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor.UI;
+using UnityEngine.UI;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseM;
     public GameObject SettingsM;
     public static bool paused = false;
+    public TMP_Dropdown resolutiondropdown;
+    private Resolution[] resolutions;
     void Start()
     {
         PauseM.SetActive(false);
         SettingsM.SetActive(false);
+        
+        resolutions = Screen.resolutions;
+        resolutiondropdown. ClearOptions();
+        List<string> options = new List<string>();
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + "x" + resolutions[i].height;
+            options.Add(option);
+        }
+        resolutiondropdown. AddOptions(options);
     }
 
     // Update is called once per frame
