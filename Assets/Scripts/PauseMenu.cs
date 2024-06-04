@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor.UI;
 using UnityEngine.UI;
 using TMPro;
 
@@ -89,6 +88,12 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.LogWarning("Quit");
         Application.Quit();
+    }
+
+    public void Back()
+    {
+        SettingsM.SetActive(false);
+        PauseM.SetActive(true);
     }
 
     public void SetResolution(int resindex)

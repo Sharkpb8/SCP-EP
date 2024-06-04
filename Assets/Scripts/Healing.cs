@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Threading;
-using UnityEditor.Experimental.GraphView;
 
 public class Healing : MonoBehaviour
 {
