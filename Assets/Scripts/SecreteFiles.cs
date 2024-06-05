@@ -14,6 +14,8 @@ public class SecreteFiles : MonoBehaviour
         if(distance < 5f && Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         
     }

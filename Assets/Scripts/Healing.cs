@@ -17,7 +17,7 @@ public class Healing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H) && HavePills() && playerhealth())
+        if(Input.GetKeyDown(KeyCode.H) && HavePills() && playerhealth() && !PauseMenu.paused)
         {
             Stats stats = GetComponent<Stats>();
             stats.Pills -= 1;
