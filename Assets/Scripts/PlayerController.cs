@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerController : MonoBehaviour
@@ -13,22 +14,24 @@ public class PlayerController : MonoBehaviour
 	private CharacterController controller;
 	private Vector3 moveDirection = Vector3.zero;
 	public float mouseSensitivity = 100.0f;
+	public Slider slider;
 	private float verticalRotation = 0.0f;
 
 	void Start()
 	{
-		Cursor.lockState = CursorLockMode.Locked; // skryje kurzor myöi
+		Cursor.lockState = CursorLockMode.Locked; // skryje kurzor my≈°i
 
 		controller = GetComponent<CharacterController>();
 		if(controller is null)
 		{
-			Debug.LogError("Hr·Ë musÌ mÌt komponentu CharacterController");
+			Debug.LogError("Hr√°√® mus√≠ m√≠t komponentu CharacterController");
 		}
 	}
 
 	void Update()
 	{
-		// pohyb hr·Ëe
+		mouseSensitivity = slider.value;
+		// pohyb hr√°√®e
 		if (controller.isGrounded)
 		{
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -44,7 +47,7 @@ public class PlayerController : MonoBehaviour
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 
-		// ovl·d·nÌ kamery pomocÌ myöi
+		// ovl√°d√°n√≠ kamery pomoc√≠ my≈°i
 		float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 		float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
