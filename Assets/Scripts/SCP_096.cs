@@ -11,13 +11,10 @@ public class SCP_096 : MonoBehaviour
     public GameObject face;
     public Transform playerCamera;
     public  NavMeshAgent agent;
-    private Boolean faceseen;
-    void Start()
-    {
-        
-    }
+    public Transform []PatrolPoints;
+    private bool faceseen;
+    private int currentWaypoint = 0;
 
-    
     void Update()
     {
         if(!faceseen){
@@ -26,9 +23,21 @@ public class SCP_096 : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 300) && hit.collider.gameObject == face)
             {
                 faceseen = true;
-            }
+            }     
+
         }else{
             agent.SetDestination(playerCamera.position);
+        }
+
+        float distanceTopatrol = Vector3.Distance(PatrolPoints[currentWaypoint].position,transform.position);
+        agent.SetDestination(PatrolPoints[currentWaypoint].position);
+        if(distanceTopatrol<1f)
+        {
+             currentWaypoint++;
+            if (currentWaypoint == PatrolPoints.Length)
+            {
+                currentWaypoint = 0;
+            }   
         }
         
     }
