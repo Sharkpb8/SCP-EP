@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Stats : MonoBehaviour
 {
@@ -46,6 +47,13 @@ public class Stats : MonoBehaviour
         {
             health_slider.value = stats.health;
         }
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }
