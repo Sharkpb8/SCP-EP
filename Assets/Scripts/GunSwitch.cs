@@ -24,13 +24,13 @@ public class GunSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha1) && !PauseMenu.paused)
         {
             Slot2.SetActive(false);
             Slot1.SetActive(true);
             mag.text = getM4A1_ammo()+"/30";
         }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
+        if(Input.GetKeyDown(KeyCode.Alpha2) && !PauseMenu.paused)
         {
             Slot1.SetActive(false);
             Slot2.SetActive(true);
